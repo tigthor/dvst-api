@@ -1,5 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
+
 require('dotenv').config();
 
 const app = express();
@@ -8,8 +9,6 @@ app.get('/pairs', async (req, res) => {
 
     const response = await fetch('https://serum-api.bonfida.com/pairs');
     const data = await response.json();
-
-    console.log(data);
     res.send(data);
 });
 
