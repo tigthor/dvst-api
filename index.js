@@ -1,5 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
+require('dotenv').config();
 
 const app = express();
 
@@ -102,7 +103,9 @@ app.get('/open-interest', async (req, res) => {
     res.send(data);
 });
 
-app.listen(4000, () => {
+const PORT = 4000 || process.env.PORT
+
+app.listen(PORT, () => {
     console.log('Example app listening on port 4000!');
 });
 
