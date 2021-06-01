@@ -102,9 +102,10 @@ app.get('/open-interest', async (req, res) => {
     res.send(data);
 });
 
-const PORT = 4000 || process.env.PORT
+// const PORT = 4000 || process.env.PORT
+const host = '0.0.0.0';
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 5000, host, () => {
     console.log('Example app listening on port 4000!');
 });
 
